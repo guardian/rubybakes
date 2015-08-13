@@ -8,16 +8,11 @@ $mq-breakpoints: (
     wide:            1300px
 );
 
-$c-dark-yellow: #fff1bf;
-$c-brown: #aa5a4f;
-$c-blue: #153860;
-$c-orange: #fc9a81;
-$c-yellow: #fefcf3;
-$c-black: #333;
 $c-white: #ffffff;
-$c-purple: #b72166;
-$c-dark-purple: #951c55;
-$c-pink: #f7acbb;
+$c-black: #333333;
+$c-grey: #bdbdbd;
+$c-purple: #951c55;
+$c-pink: #fcf1f4;
 
 $f-data: 'Guardian Agate Sans 1 Web', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
 $f-serif-text: 'Guardian Text Egyptian Web', Georgia, serif;
@@ -28,8 +23,3 @@ $f-sans-serif-headline: 'Guardian Sans Web', 'Helvetica Neue', Helvetica, Arial,
 @import 'vendor/mq';
 
 @import 'modules/existing';
-@import 'modules/header';
-@import 'modules/body';
-@import 'modules/footer';
-@import 'modules/menu';
-@import 'modules/social';
