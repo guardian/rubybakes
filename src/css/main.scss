@@ -13,6 +13,7 @@ $c-black: #333333;
 $c-grey: #bdbdbd;
 $c-purple: #951c55;
 $c-pink: #fcf1f4;
+$c-dark-pink: #f7acbb;
 
 $f-data: 'Guardian Agate Sans 1 Web', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
 $f-serif-text: 'Guardian Text Egyptian Web', Georgia, serif;
@@ -20,6 +21,23 @@ $f-serif-headline: 'Guardian Egyptian Web', Georgia, serif;
 $f-sans-serif-text: 'Guardian Text Sans Web', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
 $f-sans-serif-headline: 'Guardian Sans Web', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
 
+%f-body {
+    font-family: $f-serif-text;
+    font-size: 16px;
+    line-height: 1.375;
+}
+
+%f-headline {
+    font-family: $f-serif-headline;
+    font-weight: 300;
+    font-size: 36px;
+    line-height: 1;
+}
+
 @import 'vendor/mq';
 
+@import 'modules/base';
 @import 'modules/existing';
+@import 'modules/header';
+@import 'modules/intro';
+@import 'modules/steps';
