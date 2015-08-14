@@ -59,6 +59,12 @@
     margin-bottom: 36px;
 }
 
+.recipe__ingredient {
+    position: relative;
+    list-style: none;
+    border-top: 1px dotted $c-grey;
+}
+
 .recipe__ingredients__label {
     display: block;
     font-size: 17px;
@@ -67,16 +73,12 @@
     height: 32px;
 }
 
-.recipe__ingredient {
-    list-style: none;
-    border-top: 1px dotted $c-grey;
-}
-
 .recipe__ingredient__amount {
     width: 80px;
     display: inline-block;
     margin-right: 10px;
     font-style: italic;
+    position: absolute;
 
     sup {
         top: -0.3em;
@@ -87,6 +89,11 @@
         bottom: -0.2em;
         left: -.1em;
     }
+}
+
+.recipe__ingredient__food {
+    margin-left: 70px;
+    display: block;
 }
 
 .recipe-intro__media {
