@@ -1,9 +1,11 @@
 define([
     'libs/jquery',
-    'modules/navigation'
+    'modules/navigation',
+    'modules/ingredients'
 ], function(
     jQuery,
-    Navigation
+    Navigation,
+    Ingredients
 ) {
     'use strict';
 
@@ -18,6 +20,7 @@ define([
 
         $(window).ready(function() {
             Navigation.init();
+            Ingredients.init();
         });
     }
 

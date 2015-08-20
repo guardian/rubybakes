@@ -50,52 +50,6 @@
     border-bottom: 1px dotted $c-grey;
 }
 
-.recipe__ingredients {
-    position: relative; // To promote above intro__media
-    margin: 0;
-    border-top: 1px solid $c-purple;
-    background-color: $c-pink;
-    padding: 2px 6px 36px;
-    margin-bottom: 36px;
-}
-
-.recipe__ingredient {
-    position: relative;
-    list-style: none;
-    border-top: 1px dotted $c-grey;
-}
-
-.recipe__ingredients__label {
-    display: block;
-    font-size: 17px;
-    font-family: $f-serif-headline;
-    font-weight: 500;
-    height: 32px;
-}
-
-.recipe__ingredient__amount {
-    width: 80px;
-    display: inline-block;
-    margin-right: 10px;
-    font-style: italic;
-    position: absolute;
-
-    sup {
-        top: -0.3em;
-        right: -0.05em;
-    }
-
-    sub {
-        bottom: -0.2em;
-        left: -.1em;
-    }
-}
-
-.recipe__ingredient__food {
-    margin-left: 70px;
-    display: block;
-}
-
 .recipe-intro__media {
     height: 50vh;
     margin: -120px -0.625rem 0;
