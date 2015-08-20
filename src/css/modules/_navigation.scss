@@ -6,10 +6,13 @@
     margin: 0;
     height: 64px;
     width: 100%;
-}
+    user-select: none;
+    transition: transform 0.3s ease-out;
+    transform: translateY(0);
 
-.recipe-navigation__point {
-    list-style: none;
+    &.is-last {
+        transform: translateY(100%);
+    }
 }
 
 .recipe-navigation__button {
@@ -30,12 +33,24 @@
     bottom: 0;
     left: 0;
     right: 0;
+
+    &:hover {
+        text-decoration: none;
+
+        ~ .recipe-navigation__button {
+            background-color: darken($c-purple, 5%);
+        }
+    }
+}
+
+.recipe-navigation__point__title,
+.recipe-navigation__point__subtitle {
     font-family: $f-serif-headline;
     color: $c-black;
     font-size: 17px;
     line-height: 1.3;
     padding-top: 12px;
-    padding-left: 70px;
+    padding-left: 60px;
 }
 
 .recipe-navigation__point__title {

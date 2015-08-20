@@ -24,10 +24,18 @@ define([
             scrollTop = $(window).scrollTop();
             $(".navigation__point").each(function(index) {
                 if ($(this).offset().top >= scrollTop) {
-                    console.log($(".navigation__point:eq(" + (index + 1) + ")").attr("id"));
+                    $(".recipe-navigation").removeClass("is-last");
+
+                    var hash = $(".navigation__point:eq(" + (index + 1) + ")").attr("id");
+                    if (hash) {
+                        $(".recipe-navigation__link").attr("href", "#" + $(".navigation__point:eq(" + (index + 1) + ")").attr("id"));
+                    } else {
+                        $(".recipe-navigation").addClass("is-last");
+                        return false;
+                    }
+
                     $(".recipe-navigation__point__title").text($(this).data("navigation-title"));
                     $(".recipe-navigation__point__subtitle").text($(this).data("navigation-subtitle"));
-                    $(".recipe-navigation__link").attr("href", "#" + $(".navigation__point:eq(" + (index + 1) + ")").attr("id"));
                     return false;
                 }
             });
