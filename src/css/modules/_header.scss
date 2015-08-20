@@ -3,7 +3,7 @@
 }
 
 .recipe-header__content {
-    margin-top: -48px;
+    min-height: calc(100vh - 48px - 64px);
 }
 
 .recipe-header__media {
@@ -29,7 +29,7 @@
 .recipe__standfirst {
     @extend %f-body;
     color: $c-dark-pink;
-    padding: (9px + 48px) 0 4px;
+    padding: 9px 0 4px;
 }
 
 .recipe__headline {
