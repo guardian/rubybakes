@@ -1,9 +1,9 @@
 define([
     'libs/jquery',
-    'modules/scroll'
+    'modules/navigation'
 ], function(
     jQuery,
-    Scroll
+    Navigation
 ) {
     'use strict';
 
@@ -17,7 +17,7 @@ define([
         $(".content--interactive, .article--feature").html(template["index.html"]);
 
         $(window).ready(function() {
-            Scroll.init();
+            Navigation.init();
         });
     }
 

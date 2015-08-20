@@ -4,13 +4,14 @@
             <svg class="recipe-navigation__button" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><path fill="#fff" d="M14.85 23.45l7.6-7.6-.7-.7-6.6 5.5v-14h-1.5v14l-6.6-5.5-.7.7 7.6 7.6h.9"/></svg>
             <li class="recipe-navigation__point">
                 <a class="recipe-navigation__link" href="#recipe-intro">
-                    <span class="recipe-navigation__point__title">Read recipe</span>Ingredients
+                    <span class="recipe-navigation__point__title">Read recipe</span>
+                    <span class="recipe-navigation__point__subtitle">Ingredients</span>
                 </a>
             </li>
         </div>
     </ul>
 
-    <div class="recipe-header">
+    <div class="recipe-header navigation__point" id="header" data-navigation-title="Read recipe" data-navigation-subtitle="Ingredients and info">
         <div class="gs-container">
             <div class="recipe-header__content full">
                 <h2 class="recipe__standfirst">A short description of the recipe that's below or something. Another short sentence, cool</h2>
@@ -20,7 +21,7 @@
         </div>
     </div>
     
-    <div id="recipe-intro" class="recipe-intro full">
+    <div class="recipe-intro full navigation__point" id="intro" data-navigation-title="Start cooking" data-navigation-subtitle="Preheat and prep">
         <div class="gs-container">
             <div class="recipe-intro__body">
                 <p><span class="recipe-intro__body__initial"><span class="recipe-intro__body__initial__inner">C</span></span>onference pears work well here, though any variety is fine as long it’s perfectly ripe and tender. You can find nibbed (or pearl) sugar online, but crunchy demerara sugar will do the job just fine.</p>
@@ -55,7 +56,7 @@
     
     <div class="recipe-instructions">
         <ul class="recipe-steps">
-            <li class="recipe-step recipe-step--1 full">
+            <li class="recipe-step recipe-step--1 full navigation__point" id="step1" data-navigation-title="Next step" data-navigation-subtitle="Mix stuff or something">
                 <div class="recipe-step__content">
                     <div class="gs-container">
                         <h2 class="recipe-step__number">1.</h2>
@@ -65,7 +66,7 @@
                     </div>
                 </div>
             </li>
-            <li class="recipe-step recipe-step--1 full">
+            <li class="recipe-step recipe-step--1 full navigation__point" id="step2" data-navigation-title="Next step" data-navigation-subtitle="Cook it?">
                 <div class="recipe-step__content">
                     <div class="gs-container">
                         <h2 class="recipe-step__number">1.</h2>
@@ -75,7 +76,7 @@
                     </div>
                 </div>
             </li>
-            <li class="recipe-step recipe-step--1 full">
+            <li class="recipe-step recipe-step--1 full navigation__point" id="step3" data-navigation-title="Last step" data-navigation-subtitle="Definitely cook it now">
                 <div class="recipe-step__content">
                     <div class="gs-container">
                         <h2 class="recipe-step__number">1.</h2>
