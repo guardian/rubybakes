@@ -19,6 +19,9 @@ define([
                 this.fixDimensions();
                 console.log("fixing dimensions");
             }.bind(this));
+            $(".recipe__ingredients__label").click(function() {
+                this.expandIngredients();
+            }.bind(this));
         },
 
         snapIngredients: function() {
@@ -30,10 +33,25 @@ define([
                 $(".recipe__ingredients").addClass("is-sticky");
                 $(".recipe__ingredient:eq(0)").css("padding-top", $(".recipe__ingredients__label").outerHeight() + 2);
             }
+
+            if (scrollTop > $(".recipe__ingredients-wrapper").offset().top + $(".recipe__ingredients-wrapper").height()) {
+                $(".recipe__ingredients").addClass("is-expandable");
+                setTimeout(function() {
+                    $(".recipe__ingredients").addClass("is-transitionable");
+                }, 300);
+            } else {
+                $(".recipe__ingredients").removeClass("is-expandable is-transitionable");
+            }
         },
 
         fixDimensions: function() {
             $(".recipe__ingredients-wrapper").height($(".recipe__ingredients").outerHeight());
+        },
+
+        expandIngredients: function() {
+            if ($(".recipe__ingredients").hasClass("is-expandable")) {
+                $(".recipe__ingredients").toggleClass("is-expanded");
+            }
         }
     };
 

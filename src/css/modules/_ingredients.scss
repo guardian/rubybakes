@@ -1,19 +1,6 @@
 .recipe__ingredients {
     position: relative; // To promote above intro__media
-    margin: 0;
     padding-bottom: 36px;
-}
-
-.recipe__ingredient {
-    position: relative;
-    list-style: none;
-    border-top: 1px dotted $c-grey;
-    background-color: $c-pink;
-    padding: 2px 6px 0;
-
-    &:last-of-type {
-        padding-bottom: 32px;
-    }
 }
 
 .recipe__ingredients__label {
@@ -26,6 +13,7 @@
     padding: 2px 6px 0;
     border-top: 1px solid $c-purple;
     background-color: $c-pink;
+    user-select: none;
 
     .is-sticky & {
         position: fixed;
@@ -51,6 +39,55 @@
         &:after {
             right: -0.625rem;
         }
+    }
+}
+
+.recipe__ingredients__arrow {
+    float: right;
+    padding-top: 2px;
+    opacity: 0;
+    fill: $c-purple;
+    transition: opacity 0.3s ease-out;
+
+    .is-expandable & {
+        opacity: 1;
+    }
+
+    .is-expanded & {
+        transform: rotate(180deg);
+    }
+}
+
+.recipe__ingredients__list {
+    margin: 0;
+
+    .is-expandable & {
+        position: fixed;
+        top: 0;
+        left: 0.625rem;
+        right: 0.625rem;
+        transform: translateY(-100%);
+        z-index: 15;
+    }
+
+    .is-transitionable & {
+        transition: transform .3s ease-out;
+    }
+
+    .is-expanded & {
+        transform: translateY(0);
+    }
+}
+
+.recipe__ingredient {
+    position: relative;
+    list-style: none;
+    border-top: 1px dotted $c-grey;
+    background-color: $c-pink;
+    padding: 2px 6px 0;
+
+    &:last-of-type {
+        padding-bottom: 32px;
     }
 }
 
