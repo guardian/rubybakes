@@ -25,7 +25,11 @@ define([
 
         snapIngredients: function() {
             scrollTop = $(window).scrollTop();
-            if ($(".recipe__ingredients-wrapper").offset().top > scrollTop) {
+            var ingredientsPos = $(".recipe__ingredients-wrapper").offset().top;
+            ingredientsPos -= parseInt($(".recipe__ingredients").css("padding-top").replace("px", ""));
+            console.log(ingredientsPos);
+
+            if (ingredientsPos > scrollTop) {
                 $(".recipe__ingredients").removeClass("is-sticky");
                 $(".recipe__ingredients__list").css("padding-top", 0);
             } else {

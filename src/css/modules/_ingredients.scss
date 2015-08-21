@@ -9,6 +9,20 @@
 
 .recipe__ingredients {
     position: relative; // To promote above intro__media
+
+    @include mq(desktop) {
+        margin-top: -12px;
+        padding-top: 12px;
+    }
+
+    &.is-sticky {
+        @include mq(desktop) {
+            position: fixed;
+            top: 12px;
+            width: inherit;
+            z-index: 20;
+        }
+    }
 }
 
 .recipe__ingredients__label {
@@ -39,6 +53,12 @@
             max-width: 46.25rem - (1.25rem * 2);
             margin: auto;
             box-sizing: border-box;
+        }
+
+        @include mq(desktop) {
+            position: relative;
+            left: auto;
+            right: auto;
         }
 
         &:before,
@@ -72,6 +92,10 @@
     fill: $c-purple;
     transition: opacity 0.3s ease-out;
 
+    @include mq(desktop) { 
+        display: none;
+    }
+
     .is-expandable & {
         opacity: 1;
     }
@@ -102,6 +126,10 @@
             margin: auto;
             box-sizing: border-box;
         }
+
+        @include mq(desktop) {
+            transform: translateY(0);
+        }
     }
 
     .is-transitionable & {
@@ -110,6 +138,15 @@
 
     .is-expanded & {
         transform: translateY(0);
+    }
+
+    .is-sticky & {
+        @include mq(desktop) {
+            position: relative;
+            left: auto;
+            right: auto;
+            padding-top: 0 !important;
+        }
     }
 }
 
