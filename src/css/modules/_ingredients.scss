@@ -133,7 +133,9 @@
     }
 
     .is-transitionable & {
-        transition: transform .3s ease-out;
+        @include mq($until: desktop) {
+            transition: transform .3s ease-out;
+        }
     }
 
     .is-expanded & {
