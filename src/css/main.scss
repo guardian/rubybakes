@@ -1,3 +1,5 @@
+@import 'vendor/mq';
+
 $mq-breakpoints: (
     mobile:          320px,
     mobileLandscape: 480px,
@@ -32,9 +34,11 @@ $f-sans-serif-headline: 'Guardian Sans Web', 'Helvetica Neue', Helvetica, Arial,
     font-weight: 300;
     font-size: 36px;
     line-height: 1;
-}
 
-@import 'vendor/mq';
+    @include mq(desktop) {
+        font-size: 48px;
+    }
+}
 
 @import 'modules/base';
 @import 'modules/existing';

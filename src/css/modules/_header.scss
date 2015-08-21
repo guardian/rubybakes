@@ -14,16 +14,29 @@
     height: 50vh;
     margin: 0 -0.625rem;
     background: url("http://i.guim.co.uk/img/static/sys-images/Lifeandhealth/Our_experts/columnists/2015/7/23/1437645750966/Coffee-ricotta-stracciate-010.jpg?w=620&q=85&auto=format&sharp=10&s=914dd034a4640102229cd578c61b196a") no-repeat;
+    background-size: cover;
     background-position: bottom center;
 
-    @include mq(tablet) {
+    @include mq(mobileLandscape) {
         margin: 0 -1.25rem;
+    }
+
+    @include mq(desktop) {
+        left: 340px;
+        top: 0;
+        height: auto;
     }
 }
 
 .recipe-header__image {
     width: 100%;
     display: block;
+}
+
+.recipe-header__copy {
+    @include mq(desktop) {
+        width: 300px;
+    }
 }
 
 .recipe__standfirst {
