@@ -27,10 +27,10 @@ define([
             scrollTop = $(window).scrollTop();
             if ($(".recipe__ingredients-wrapper").offset().top > scrollTop) {
                 $(".recipe__ingredients").removeClass("is-sticky");
-                $(".recipe__ingredient:eq(0)").css("padding-top", 0);
+                $(".recipe__ingredients__list").css("padding-top", 0);
             } else {
                 $(".recipe__ingredients").addClass("is-sticky");
-                $(".recipe__ingredient:eq(0)").css("padding-top", $(".recipe__ingredients__label").outerHeight() + 2);
+                $(".recipe__ingredients__list").css("padding-top", $(".recipe__ingredients__label").outerHeight());
             }
 
             if (scrollTop > $(".recipe__ingredients-wrapper").offset().top + $(".recipe__ingredients-wrapper").height()) {
@@ -44,7 +44,11 @@ define([
         },
 
         fixDimensions: function() {
-            $(".recipe__ingredients-wrapper").height($(".recipe__ingredients").outerHeight());
+            if ($(".recipe__ingredients").hasClass("is-expandable")) {
+                $(".recipe__ingredients-wrapper").height($(".recipe__ingredients__list").outerHeight());
+            } else {
+                $(".recipe__ingredients-wrapper").height($(".recipe__ingredients").outerHeight());
+            }
         },
 
         expandIngredients: function() {

@@ -9,7 +9,6 @@
 
 .recipe__ingredients {
     position: relative; // To promote above intro__media
-    padding-bottom: 36px;
 }
 
 .recipe__ingredients__label {
@@ -31,22 +30,37 @@
         left: 0.625rem;
         right: 0.625rem;
 
+        @include mq(mobileLandscape) {
+            left: 1.25rem;
+            right: 1.25rem;
+        }
+
+        @include mq(tablet) {
+            max-width: 46.25rem - (1.25rem * 2);
+            margin: auto;
+            box-sizing: border-box;
+        }
+
         &:before,
         &:after {
             content: "";
             position: absolute;
             top: -1px;
-            width: 0.625rem;
+            width: 1.25rem;
             bottom: 0;
             background-color: $c-white;
+
+            @include mq(desktop) {
+                display: none;
+            }
         }
 
         &:before {
-            left: -0.625rem;
+            left: -1.25rem;
         }
 
         &:after {
-            right: -0.625rem;
+            right: -1.25rem;
         }
     }
 }
@@ -77,6 +91,17 @@
         right: 0.625rem;
         transform: translateY(-100%);
         z-index: 15;
+
+        @include mq(mobileLandscape) {
+            left: 1.25rem;
+            right: 1.25rem;
+        }
+
+        @include mq(tablet) {
+            max-width: 46.25rem - (1.25rem * 2);
+            margin: auto;
+            box-sizing: border-box;
+        }
     }
 
     .is-transitionable & {
