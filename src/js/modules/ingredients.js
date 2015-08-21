@@ -17,7 +17,6 @@ define([
             }.bind(this));
             $(window).resize(function() {
                 this.fixDimensions();
-                console.log("fixing dimensions");
             }.bind(this));
             $(".recipe__ingredients__label").click(function() {
                 this.expandIngredients();
