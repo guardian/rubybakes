@@ -28,6 +28,10 @@
         padding-right: 1.25rem;
     }
 
+    @include mq(tablet) {
+        margin-right: 140px;
+    }
+
     @include mq(desktop) {
         padding-left: 280px;
         margin-right: 340px;
