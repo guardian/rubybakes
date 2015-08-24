@@ -3,7 +3,7 @@ define([
 ], function(
     jquery
 ){
-    var scrollTop;
+    var scrollTop, passedSteps, currentStep;
 
     var ingredients = {
         init: function() {
@@ -14,6 +14,8 @@ define([
         bindings: function() {
             $(window).scroll(function() {
                 this.snapIngredients();
+                this.stepWatcher();
+                // this.checkOffIngredients();
             }.bind(this));
             $(window).resize(function() {
                 this.fixDimensions();
@@ -43,6 +45,37 @@ define([
                 }, 300);
             } else {
                 $(".recipe__ingredients").removeClass("is-expandable is-transitionable");
+            }
+        },
+
+        stepWatcher: function() {
+            var tempStep;
+            $(".recipe-step").each(function(index) {
+                if (scrollTop > $(this).offset().top) {
+                    tempStep = index;
+                }
+            });
+
+            if (tempStep !== currentStep) {
+                currentStep = tempStep;
+                this.checkOffIngredients(currentStep);
+            }
+        },
+
+        checkOffIngredients: function(lastStep) {
+            $(".recipe__ingredient").removeClass("is-active is-used");
+            for (var i = 0; i <= lastStep; i++) {
+                var listOfIngredients = $(".recipe-step--" + (i + 1)).data("ingredients");
+                if (typeof listOfIngredients !== "undefined") {
+                    listOfIngredients = listOfIngredients.split(" ");
+                    $.each(listOfIngredients, function(index, value) {
+                        if (lastStep === i) {
+                            $(".recipe__ingredient--" + value).removeClass("is-active is-used").addClass("is-active");
+                        } else {
+                            $(".recipe__ingredient--" + value).removeClass("is-active is-used").addClass("is-used");
+                        }
+                    });
+                }
             }
         },
 
