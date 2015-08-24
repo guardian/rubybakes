@@ -69,6 +69,16 @@
     border-bottom: 1px dotted $c-grey;
 }
 
+.recipe__info__num {
+    @include mq(tablet) {
+        margin-right: -2px;
+        font-family: $f-serif-headline;
+        font-size: 2.4em;
+        font-weight: 300;
+        line-height: 1.1;
+    }
+}
+
 .recipe-intro__media {
     height: 50vh;
     margin: -120px -0.625rem 0;
