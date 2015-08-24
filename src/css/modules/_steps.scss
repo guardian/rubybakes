@@ -7,6 +7,10 @@
     background: url("http://i.guim.co.uk/img/static/sys-images/Lifeandhealth/Pix/pictures/2013/8/28/1377707738178/Dan-step-3-Stir-in-the-su-008.jpg?w=620&q=85&auto=format&sharp=10&s=91a8715dc71ecc3f76e44f12eadd1830") no-repeat;
     background-size: cover;
     background-position: center center;
+
+    .ingredient {
+        color: $c-purple;
+    }
 }
 
 .recipe-step__content {

@@ -43,8 +43,12 @@ define([
 
         scrollToAnchor: function(e) {
             e.preventDefault();
+            var scrollTo = $(e.currentTarget.hash).offset().top;
+            if ($(window).width() < 980 && e.currentTarget.hash !== "#intro") {
+                scrollTo -= $(".recipe__ingredients__label").height();
+            }
             $("html, body").animate({
-                scrollTop: $(e.currentTarget.hash).offset().top
+                scrollTop: scrollTo
             }, 'slow');
         }
     };
