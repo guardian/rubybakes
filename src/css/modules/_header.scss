@@ -15,7 +15,7 @@
     margin: 0 -0.625rem;
     background: url("@@assetPath@@/assets/main.jpg") no-repeat;
     background-size: cover;
-    background-position: bottom center;
+    background-position: top left;
 
     @include mq(mobileLandscape) {
         margin: 0 -1.25rem;
@@ -34,6 +34,8 @@
 }
 
 .recipe-header__copy {
+    padding-top: 9px;
+
     @include mq(desktop) {
         width: 300px;
     }
@@ -42,7 +44,12 @@
 .recipe__standfirst {
     @extend %f-body;
     color: $c-dark-pink;
-    padding: 9px 0 4px;
+    padding: 0 0 4px;
+    display: none;
+
+    @include mq(mobileLandscape) {
+        display: block;
+    }
 }
 
 .recipe__headline {
