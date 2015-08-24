@@ -162,6 +162,15 @@
     &:last-of-type {
         padding-bottom: 32px;
     }
+
+    &.is-used {
+        color: $c-dark-grey;
+        text-decoration: line-through;
+    }
+
+    &.is-active {
+        color: $c-purple;
+    }
 }
 
 .recipe__ingredient__amount {
