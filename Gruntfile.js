@@ -9,11 +9,11 @@ module.exports = function(grunt) {
         watch: {
             local: {
                 files: ['src/css/**/*.scss', 'src/index.html', 'src/js/**/*.js', 'src/boot.js', 'src/assets/**/*'],
-                tasks: ['sass', 'autoprefixer', 'cssmin', 'copy', 'htmlConvert', 'replace:html', 'requirejs', 'replace:local']
+                tasks: ['sass', 'autoprefixer', 'cssmin', 'clean', 'copy', 'htmlConvert', 'replace:html', 'requirejs', 'replace:local']
             },
             remote: {
                 files: ['src/css/**/*.scss', 'src/index.html', 'src/js/**/*.js', 'src/boot.js'],
-                tasks: ['sass', 'autoprefixer', 'cssmin', 'copy', 'pngmin', 'htmlConvert', 'replace:html', 'requirejs', 'replace:remote', 'aws_s3']
+                tasks: ['sass', 'autoprefixer', 'cssmin', 'clean', 'copy', 'pngmin', 'htmlConvert', 'replace:html', 'requirejs', 'replace:remote', 'aws_s3']
             }
         },
         pngmin: {
@@ -75,12 +75,15 @@ module.exports = function(grunt) {
                 }
             }
         },
+        clean: {
+            build: ["build/assets"]
+        },
         copy: {
             main: {
                 files: [{
                     expand: true,
                     cwd: 'src',
-                    src: ['js/**', 'index.html', 'boot.js', 'assets/*.jpg','assets/**'],
+                    src: ['js/**', 'index.html', 'boot.js', 'assets/*.jpg', 'assets/**'],
                     dest: 'build/'
                 }]
             }
