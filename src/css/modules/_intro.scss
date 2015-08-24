@@ -82,8 +82,8 @@
 .recipe-intro__media {
     height: 50vh;
     margin: -120px -0.625rem 0;
-    background: url("http://i.guim.co.uk/img/static/sys-images/Lifeandhealth/Our_experts/columnists/2015/7/23/1437645750966/Coffee-ricotta-stracciate-010.jpg?w=620&q=85&auto=format&sharp=10&s=914dd034a4640102229cd578c61b196a") no-repeat;
-    background-position: bottom center;
+    background: url("@@assetPath@@/assets/ingredients.jpg") no-repeat;
+    background-position: center center;
     background-size: cover;
 
     @include mq(mobileLandscape) {
