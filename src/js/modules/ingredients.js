@@ -56,7 +56,7 @@ define([
         stepWatcher: function() {
             var tempStep;
             $(".recipe-step").each(function(index) {
-                if (scrollTop >= $(this).offset().top) {
+                if (scrollTop >= $(this).offset().top - ($(this).height() / 4)) {
                     tempStep = index;
                 }
             });

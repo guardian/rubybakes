@@ -23,7 +23,7 @@ define([
         updateNavigation: function() {
             scrollTop = $(window).scrollTop();
             $(".navigation__point").each(function(index) {
-                if ($(this).offset().top + 20 > scrollTop) {
+                if ($(this).offset().top + ($(this).height() / 2) > scrollTop) {
                     $(".recipe-navigation").removeClass("is-last");
 
                     var hash = $(".navigation__point:eq(" + (index + 1) + ")").attr("id");
