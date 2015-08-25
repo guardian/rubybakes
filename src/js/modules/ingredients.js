@@ -51,13 +51,14 @@ define([
         stepWatcher: function() {
             var tempStep;
             $(".recipe-step").each(function(index) {
-                if (scrollTop > $(this).offset().top) {
+                if (scrollTop >= $(this).offset().top) {
                     tempStep = index;
                 }
             });
 
             if (tempStep !== currentStep) {
                 currentStep = tempStep;
+                console.log(currentStep);
                 this.checkOffIngredients(currentStep);
             }
         },
