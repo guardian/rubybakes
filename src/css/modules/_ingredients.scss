@@ -9,6 +9,7 @@
 
 .recipe__ingredients {
     position: relative; // To promote above intro__media
+    transition: opacity 0.3s ease-out;
 
     @include mq(desktop) {
         margin-top: -12px;
@@ -22,6 +23,10 @@
             width: inherit;
             z-index: 20;
         }
+    }
+
+    &.is-done {
+        opacity: 0;
     }
 }
 

@@ -46,10 +46,10 @@ define([
                 $(".recipe__ingredients").removeClass("is-expandable is-transitionable");
             }
 
-            if (scrollTop > $(".recipe-step").last().offset().top) {
-                $(".recipe__ingredients").addClass("is-hidden");
+            if (scrollTop > $(".recipe-step").last().offset().top + ($(".recipe-step").last().height() / 3)) {
+                $(".recipe__ingredients").addClass("is-done");
             } else {
-                $(".recipe__ingredients").removeClass("is-hidden");
+                $(".recipe__ingredients").removeClass("is-done");
             }
         },
 
