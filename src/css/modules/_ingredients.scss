@@ -10,6 +10,7 @@
 .recipe__ingredients {
     position: relative; // To promote above intro__media
     transition: opacity 0.3s ease-out;
+    opacity: 1;
 
     @include mq(desktop) {
         margin-top: -12px;
@@ -31,6 +32,7 @@
 }
 
 .recipe__ingredients__label {
+    position: relative;
     display: block;
     font-size: 17px;
     font-family: $f-serif-headline;
@@ -41,6 +43,33 @@
     border-top: 1px solid $c-purple;
     background-color: $c-pink;
     user-select: none;
+
+    @include mq($until: desktop) {
+        transition: background-color 0.3s ease-out, color 0.3s ease-out;
+    }
+
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+        top: -1px;
+        width: 1.25rem;
+        bottom: 0;
+        background-color: $c-white;
+        opacity: 0;
+
+        @include mq($until: desktop) {
+            transition: opacity 0.3s ease-out;
+        }
+    }
+
+    &:before {
+        left: -1.25rem;
+    }
+
+    &:after {
+        right: -1.25rem;
+    }
 
     .is-sticky & {
         position: fixed;
@@ -60,6 +89,11 @@
             box-sizing: border-box;
         }
 
+        @include mq($until: desktop) {
+            background-color: $c-purple;
+            color: $c-white;
+        }
+
         @include mq(desktop) {
             position: relative;
             left: auto;
@@ -68,33 +102,27 @@
 
         &:before,
         &:after {
-            content: "";
-            position: absolute;
-            top: -1px;
-            width: 1.25rem;
-            bottom: 0;
-            background-color: $c-white;
-
-            @include mq(desktop) {
-                display: none;
+            @include mq($until: desktop) {
+                opacity: 1;
             }
         }
-
-        &:before {
-            left: -1.25rem;
-        }
-
-        &:after {
-            right: -1.25rem;
-        }
     }
+}
+
+.recipe__ingredients__hit-area {
+    position: absolute;
+    top: -1px;
+    left: -1.25rem;
+    right: -1.25rem;
+    bottom: -50%;
+    z-index: 20;
 }
 
 .recipe__ingredients__arrow {
     float: right;
     padding-top: 2px;
     opacity: 0;
-    fill: $c-purple;
+    fill: $c-white;
     transition: opacity 0.3s ease-out;
 
     @include mq(desktop) { 

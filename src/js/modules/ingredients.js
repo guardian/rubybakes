@@ -19,7 +19,7 @@ define([
             $(window).resize(function() {
                 this.fixDimensions();
             }.bind(this));
-            $(".recipe__ingredients__label").click(function() {
+            $(".recipe__ingredients__hit-area").click(function() {
                 this.expandIngredients();
             }.bind(this));
         },
