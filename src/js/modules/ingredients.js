@@ -15,7 +15,6 @@ define([
             $(window).scroll(function() {
                 this.snapIngredients();
                 this.stepWatcher();
-                // this.checkOffIngredients();
             }.bind(this));
             $(window).resize(function() {
                 this.fixDimensions();
