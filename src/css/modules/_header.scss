@@ -4,27 +4,19 @@
 
 .recipe-header__content {
     min-height: calc(100vh - 48px - 64px);
-}
-
-.recipe-header__media {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    height: 50vh;
-    margin: 0 -0.625rem;
     background: url("@@assetPath@@/assets/main.jpg") no-repeat;
-    background-size: cover;
-    background-position: top left;
+    background-color: #93bcc9;
+    background-size: 146%;
+    margin: 0 -0.625rem;
+    background-position: right 70%;
 
     @include mq(mobileLandscape) {
         margin: 0 -1.25rem;
     }
 
     @include mq(desktop) {
-        left: 340px;
-        top: 0;
-        height: auto;
+        background-size: 1300px;
+        background-position: left bottom;
     }
 }
 
@@ -35,6 +27,7 @@
 
 .recipe-header__copy {
     padding-top: 9px;
+    padding-left: 20px;
 
     @include mq(desktop) {
         width: 300px;
@@ -43,7 +36,7 @@
 
 .recipe__standfirst {
     @extend %f-body;
-    color: $c-dark-pink;
+    color: $c-black;
     padding: 0 0 4px;
     display: none;
 
@@ -54,5 +47,5 @@
 
 .recipe__headline {
     @extend %f-headline;
-    color: $c-white;
+    color: $c-purple;
 }
