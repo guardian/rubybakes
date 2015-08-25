@@ -46,6 +46,12 @@ define([
             } else {
                 $(".recipe__ingredients").removeClass("is-expandable is-transitionable");
             }
+
+            if (scrollTop > $(".recipe-step").last().offset().top) {
+                $(".recipe__ingredients").addClass("is-hidden");
+            } else {
+                $(".recipe__ingredients").removeClass("is-hidden");
+            }
         },
 
         stepWatcher: function() {
@@ -58,7 +64,6 @@ define([
 
             if (tempStep !== currentStep) {
                 currentStep = tempStep;
-                console.log(currentStep);
                 this.checkOffIngredients(currentStep);
             }
         },
