@@ -1,33 +1,30 @@
 .recipe-header {
+    overflow: hidden;
     background-color: $c-purple;
 }
 
 .recipe-header__content {
     min-height: calc(100vh - 48px - 64px);
-    background: url("@@assetPath@@/assets/main.jpg") no-repeat;
-    background-color: #93bcc9;
-    background-size: 146%;
-    margin: 0 -0.625rem;
+    background-color: #badde9;
     background-position: right 70%;
-
-    @include mq(mobileLandscape) {
-        margin: 0 -1.25rem;
-    }
-
-    @include mq(desktop) {
-        background-size: 1300px;
-        background-position: left bottom;
-    }
 }
 
 .recipe-header__image {
-    width: 100%;
-    display: block;
+    position: absolute;
+    width: 140%;
+    left: -20%;
+
+    @include mq(desktop) {
+        width: auto;
+        top: -130px;
+        left: 350px;
+    }
 }
 
 .recipe-header__copy {
     padding-top: 9px;
-    padding-left: 20px;
+    position: relative;
+    z-index: 5;
 
     @include mq(desktop) {
         width: 300px;
