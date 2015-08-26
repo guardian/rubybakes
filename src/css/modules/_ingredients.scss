@@ -55,7 +55,10 @@
         top: -1px;
         width: 1.25rem;
         bottom: 0;
-        background-color: $c-white;
+        transition: transform 0.3s ease-out;
+        border-top: 1px solid $c-purple;
+        background-color: $c-pink;
+        z-index: -1;
 
         @include mq(desktop) {
             display: none;
@@ -63,11 +66,11 @@
     }
 
     &:before {
-        left: -1.25rem;
+        left: 0;
     }
 
     &:after {
-        right: -1.25rem;
+        right: 0;
     }
 
     .is-sticky & {
@@ -92,6 +95,22 @@
             position: relative;
             left: auto;
             right: auto;
+        }
+    }
+
+    .is-expandable & {
+        &:before,
+        &:after {
+            border-top-color: $c-purple;
+            background-color: $c-pink;
+        }
+
+        &:before {
+            transform: translateX(-1.25rem);
+        }
+
+        &:after {
+            transform: translateX(1.25rem);
         }
     }
 }
