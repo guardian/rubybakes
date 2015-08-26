@@ -22,6 +22,11 @@
     height: 44px;
     padding: 3px;
     margin: auto;
+
+    @include mq(desktop) {
+        left: 270px;
+        right: auto;
+    }
 }
 
 .recipe-navigation__link {
@@ -60,6 +65,10 @@
     line-height: 1.3;
     padding-top: 10px;
     padding-right: 60px;
+
+    @include mq(desktop) {
+        padding-left: 320px;
+    }
 }
 
 .recipe-navigation__point__title {
