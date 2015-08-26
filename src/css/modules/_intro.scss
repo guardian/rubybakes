@@ -9,6 +9,11 @@
 .recipe-intro__body {
     margin-bottom: 36px;
 
+    @include mq(tablet) {
+        position: relative;
+        margin: 0 180px 36px 0;
+    }
+
     @include mq(desktop) {
         position: relative;
         margin: 0 320px 36px 180px;
@@ -45,11 +50,16 @@
     margin: 0;
     margin-bottom: 36px;
 
-    @include mq(desktop) {
+    @include mq(tablet) {
         position: absolute;
         top: 0;
-        left: 1.25rem;
+        right: 1.25rem;
         width: 160px;
+    }
+
+    @include mq(desktop) {
+        right: auto;
+        left: 1.25rem;
     }
 
     @include mq(leftCol) {
@@ -63,7 +73,7 @@
     float: left;
     list-style: none;
 
-    @include mq(desktop, leftCol) {
+    @include mq(tablet, leftCol) {
         width: 100%;
         margin-bottom: 24px;
     }
@@ -81,7 +91,7 @@
     height: 44px;
     border-bottom: 1px dotted $c-grey;
 
-    @include mq(desktop) {
+    @include mq(tablet) {
         height: 32px;
     }
 }

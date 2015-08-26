@@ -21,6 +21,7 @@
 
 .recipe-step__content {
     background-color: white;
+    border-top: 1px solid $c-purple;
     padding: 6px 0.625rem 24px;
 
     @include mq(mobileLandscape) {
@@ -29,7 +30,7 @@
     }
 
     @include mq(tablet) {
-        margin-right: 140px;
+        margin-right: 160px;
     }
 
     @include mq(desktop) {
