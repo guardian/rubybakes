@@ -78,8 +78,12 @@
     font-size: 17px;
     font-family: $f-serif-headline;
     font-weight: 500;
-    height: 32px;
+    height: 44px;
     border-bottom: 1px dotted $c-grey;
+
+    @include mq(desktop) {
+        height: 32px;
+    }
 }
 
 .recipe__info__num {

@@ -37,12 +37,16 @@
     font-size: 17px;
     font-family: $f-serif-headline;
     font-weight: 500;
-    height: 32px;
+    height: 44px;
     margin: 0;
     padding: 2px 6px 0;
     border-top: 1px solid $c-purple;
     background-color: $c-pink;
     user-select: none;
+
+    @include mq(desktop) {
+        height: 32px;
+    }
 
     &:before,
     &:after {
@@ -52,10 +56,9 @@
         width: 1.25rem;
         bottom: 0;
         background-color: $c-white;
-        opacity: 0;
 
-        @include mq($until: desktop) {
-            transition: opacity 0.3s ease-out;
+        @include mq(desktop) {
+            display: none;
         }
     }
 
@@ -90,13 +93,6 @@
             left: auto;
             right: auto;
         }
-
-        &:before,
-        &:after {
-            @include mq($until: desktop) {
-                opacity: 1;
-            }
-        }
     }
 }
 
@@ -113,7 +109,7 @@
     float: right;
     padding-top: 2px;
     opacity: 0;
-    fill: $c-white;
+    fill: $c-purple;
     transition: opacity 0.3s ease-out;
 
     @include mq(desktop) { 
