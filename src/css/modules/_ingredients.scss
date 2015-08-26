@@ -12,6 +12,16 @@
     transition: opacity 0.3s ease-out;
     opacity: 1;
 
+    @include mq($until: mobileLandscape) {
+        margin-left: -0.625rem;
+        margin-right: -0.625rem;
+    }
+
+    @include mq(mobileLandscape, desktop) {
+        margin-left: -1.25rem;
+        margin-right: -1.25rem;
+    }
+
     @include mq(desktop) {
         margin-top: -12px;
         padding-top: 12px;
@@ -31,6 +41,20 @@
     }
 }
 
+.recipe__ingredients__label,
+.recipe__ingredients__list {
+    padding: 0 0.625rem;
+    background-color: $c-pink;
+
+    @include mq(mobileLandscape) {
+        padding: 0 1.25rem;
+    }
+
+    @include mq(desktop) {
+        padding: 0 6px;
+    }
+}
+
 .recipe__ingredients__label {
     position: relative;
     display: block;
@@ -39,7 +63,7 @@
     font-weight: 500;
     height: 44px;
     margin: 0;
-    padding: 2px 6px 0;
+    padding-top: 2px;
     border-top: 1px solid $c-purple;
     background-color: $c-pink;
     user-select: none;
@@ -48,45 +72,14 @@
         height: 32px;
     }
 
-    &:before,
-    &:after {
-        content: "";
-        position: absolute;
-        top: -1px;
-        width: 1.25rem;
-        bottom: 0;
-        transition: transform 0.3s ease-out;
-        border-top: 1px solid $c-purple;
-        background-color: $c-pink;
-        z-index: -1;
-
-        @include mq(desktop) {
-            display: none;
-        }
-    }
-
-    &:before {
-        left: 0;
-    }
-
-    &:after {
-        right: 0;
-    }
-
     .is-sticky & {
         position: fixed;
         z-index: 20;
         top: 0;
-        left: 0.625rem;
-        right: 0.625rem;
-
-        @include mq(mobileLandscape) {
-            left: 1.25rem;
-            right: 1.25rem;
-        }
+        left: 0;
+        right: 0;
 
         @include mq(tablet) {
-            max-width: 46.25rem - (1.25rem * 2);
             margin: auto;
             box-sizing: border-box;
         }
@@ -95,22 +88,6 @@
             position: relative;
             left: auto;
             right: auto;
-        }
-    }
-
-    .is-expandable & {
-        &:before,
-        &:after {
-            border-top-color: $c-purple;
-            background-color: $c-pink;
-        }
-
-        &:before {
-            transform: translateX(-1.25rem);
-        }
-
-        &:after {
-            transform: translateX(1.25rem);
         }
     }
 }
@@ -195,8 +172,7 @@
     position: relative;
     list-style: none;
     border-top: 1px dotted $c-grey;
-    background-color: $c-pink;
-    padding: 2px 6px 0;
+    padding-top: 2px;
     transition: color 0.3s ease-out;
 
     &:last-of-type {
