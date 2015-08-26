@@ -44,10 +44,6 @@
     background-color: $c-pink;
     user-select: none;
 
-    @include mq($until: desktop) {
-        transition: background-color 0.3s ease-out, color 0.3s ease-out;
-    }
-
     &:before,
     &:after {
         content: "";
@@ -87,11 +83,6 @@
             max-width: 46.25rem - (1.25rem * 2);
             margin: auto;
             box-sizing: border-box;
-        }
-
-        @include mq($until: desktop) {
-            background-color: $c-purple;
-            color: $c-white;
         }
 
         @include mq(desktop) {
