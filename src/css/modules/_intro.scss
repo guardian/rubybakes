@@ -1,9 +1,5 @@
 .recipe-intro {
-    padding-top: 6px;
-
-    @include mq(desktop) {
-        padding-top: 12px;
-    }
+    padding-top: 12px;
 }
 
 .recipe-intro__body {
@@ -50,7 +46,7 @@
         display: inline-block;
         vertical-align: text-top;
         font-size: 3.25rem;
-        line-height: 2.5rem;
+        line-height: 2.7rem;
     }
 }
 
@@ -61,7 +57,7 @@
 
     @include mq(tablet) {
         position: absolute;
-        top: 0;
+        top: 4px;
         right: 1.25rem;
         width: 160px;
     }
