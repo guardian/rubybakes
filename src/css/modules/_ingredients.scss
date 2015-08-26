@@ -79,7 +79,8 @@
         left: 0;
         right: 0;
 
-        @include mq(tablet) {
+        @include mq(tablet, desktop) {
+            max-width: 46.25rem;
             margin: auto;
             box-sizing: border-box;
         }
@@ -127,18 +128,13 @@
     .is-expandable & {
         position: fixed;
         top: 0;
-        left: 0.625rem;
-        right: 0.625rem;
+        left: 0;
+        right: 0;
         transform: translateY(-100%);
         z-index: 15;
 
-        @include mq(mobileLandscape) {
-            left: 1.25rem;
-            right: 1.25rem;
-        }
-
-        @include mq(tablet) {
-            max-width: 46.25rem - (1.25rem * 2);
+        @include mq(tablet, desktop) {
+            max-width: 46.25rem;
             margin: auto;
             box-sizing: border-box;
         }
@@ -172,7 +168,7 @@
     position: relative;
     list-style: none;
     border-top: 1px dotted $c-grey;
-    padding-top: 2px;
+    padding-bottom: 4px;
     transition: color 0.3s ease-out;
 
     &:last-of-type {
