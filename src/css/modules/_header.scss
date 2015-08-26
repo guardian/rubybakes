@@ -4,7 +4,7 @@
 }
 
 .recipe-header__content {
-    min-height: calc(100vh - 48px - 64px);
+    min-height: calc(100vh - 48px - 94px);
     background-color: #badde9;
     background-position: right 70%;
 }
@@ -26,6 +26,10 @@
     position: relative;
     z-index: 5;
 
+    @include mq(tablet) {
+        max-width: 600px;
+    }
+
     @include mq(desktop) {
         width: 300px;
     }
@@ -40,9 +44,18 @@
     @include mq(mobileLandscape) {
         display: block;
     }
-}
+
+    @include mq(desktop) {
+        width: 410px;
+    }
+} 
 
 .recipe__headline {
     @extend %f-headline;
     color: $c-purple;
+    padding-bottom: 32px;
+
+    @include mq(tablet, desktop) {
+        font-size: 46px;
+    }
 }
