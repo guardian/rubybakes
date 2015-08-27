@@ -44,7 +44,7 @@ define([
         scrollToAnchor: function(e) {
             e.preventDefault();
             var scrollTo = Math.ceil($(e.currentTarget.hash).offset().top);
-            if ($(window).width() < 980 && e.currentTarget.hash !== "#intro") {
+            if ($(window).width() < 980 && e.currentTarget.hash !== "#intro" && e.currentTarget.hash !== "#ingredients") {
                 scrollTo -= $(".recipe__ingredients__label").height();
             }
             $("html, body").animate({

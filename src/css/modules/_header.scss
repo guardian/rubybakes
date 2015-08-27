@@ -38,6 +38,8 @@
 .recipe__standfirst {
     @extend %f-body;
     color: $c-black;
+    font-family: $f-serif-headline;
+    font-weight: 900;
     padding: 0 0 4px;
     display: none;
 

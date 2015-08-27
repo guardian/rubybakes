@@ -60,7 +60,7 @@
     display: block;
     font-size: 17px;
     font-family: $f-serif-headline;
-    font-weight: 500;
+    font-weight: 900;
     height: 44px;
     margin: 0;
     padding-top: 2px;
@@ -181,6 +181,7 @@
 
     &.is-active {
         color: $c-purple;
+        font-weight: bold;
     }
 }
 
