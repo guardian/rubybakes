@@ -42,6 +42,7 @@
 
 .recipe-step__number {
     @extend %f-headline;
+    font-size: 52px;
     color: $c-purple;
     position: absolute;
 }
