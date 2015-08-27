@@ -29,24 +29,27 @@
     }
 }
 
-.recipe-intro__body__initial {
+.recipe-intro__byline {
     float: left;
-    display: inline-block;
-    text-transform: uppercase;
-    font-family: $f-serif-headline;
-    font-weight: normal;
-    font-weight: 200;
-    box-sizing: border-box;
-    height: 3rem;
-    padding-top: 0.0625rem;
-    margin-right: 0.25rem;
-    color: $c-purple;
+    max-width: 114px;
+    margin-bottom: 12px;
+    margin-right: 10px;
+    border-right: 1px dotted $c-grey;
+    padding-right: 9px;
+}
 
-    &__inner {
-        display: inline-block;
-        vertical-align: text-top;
-        font-size: 3.25rem;
-        line-height: 2.7rem;
+.recipe-intro__byline__image {
+    border-radius: 50%;
+    width: 100%;
+    height: auto;
+}
+
+.recipe-intro__byline__name {
+    @extend %f-body;
+    font-weight: 900;
+
+    a {
+        color: $c-purple;
     }
 }
 
