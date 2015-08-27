@@ -28,11 +28,12 @@
     }
 
     &.is-sticky {
+    z-index: 20;
+
         @include mq(desktop) {
             position: fixed;
             top: 12px;
             width: inherit;
-            z-index: 20;
         }
     }
 
