@@ -15,6 +15,9 @@ define([
             $(window).scroll(function() {
                 this.updateNavigation();
             }.bind(this));
+            $(window).resize(function() {
+                this.updateNavigation();
+            }.bind(this));
             $(".recipe-navigation__link").click(function(e) {
                 this.scrollToAnchor(e);
             }.bind(this));
@@ -26,16 +29,21 @@ define([
                 if ($(this).offset().top + ($(this).height() / 2) > scrollTop) {
                     $(".recipe-navigation").removeClass("is-last");
 
-                    var hash = $(".navigation__point:eq(" + (index + 1) + ")").attr("id");
-                    if (hash) {
-                        $(".recipe-navigation__link").attr("href", "#" + $(".navigation__point:eq(" + (index + 1) + ")").attr("id"));
-                    } else {
+                    var target = $(".navigation__point:eq(" + (index + 1) + ")");
+
+                    if ($(window).width() > 980 && $(target).hasClass("navigation__point--mobile-only")) {
+                        target = $(".navigation__point:eq(" + (index + 2) + ")");
+                    }
+
+                    var hash = $(target).attr("id");
+                    if (!hash) {
                         $(".recipe-navigation").addClass("is-last");
                         return false;
                     }
 
-                    $(".recipe-navigation__point__title").text($(this).data("navigation-title"));
-                    $(".recipe-navigation__point__subtitle").text($(this).data("navigation-subtitle"));
+                    $(".recipe-navigation__link").attr("href", "#" + $(target).attr("id"));
+                    $(".recipe-navigation__point__title").text($(target).data("navigation-title"));
+                    $(".recipe-navigation__point__subtitle").text($(target).data("navigation-subtitle"));
                     return false;
                 }
             });
