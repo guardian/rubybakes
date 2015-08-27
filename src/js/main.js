@@ -1,9 +1,11 @@
 define([
     'libs/jquery',
+    'libs/nosleep',
     'modules/navigation',
     'modules/ingredients'
 ], function(
     jQuery,
+    noSleep,
     Navigation,
     Ingredients
 ) {
@@ -21,6 +23,10 @@ define([
         $(window).ready(function() {
             Navigation.init();
             Ingredients.init();
+            document.addEventListener('touchstart', function() {
+                noSleep.enable();
+                document.removeEventListener('touchstart', enableNoSleep, false);
+            }, false);
         });
     }
 
