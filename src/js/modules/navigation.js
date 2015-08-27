@@ -25,13 +25,14 @@ define([
 
         updateNavigation: function() {
             scrollTop = $(window).scrollTop();
+            isDesktop = this.isDesktop();
             $(".navigation__point").each(function(index) {
-                if ($(this).offset().top + ($(this).height() / 2) > scrollTop) {
+                if ($(this).offset().top + ($(window).height() / 2) > scrollTop) {
                     $(".recipe-navigation").removeClass("is-last");
 
                     var target = $(".navigation__point:eq(" + (index + 1) + ")");
 
-                    if ($(window).width() > 980 && $(target).hasClass("navigation__point--mobile-only")) {
+                    if (isDesktop && $(target).hasClass("navigation__point--mobile-only")) {
                         target = $(".navigation__point:eq(" + (index + 2) + ")");
                     }
 
@@ -52,12 +53,23 @@ define([
         scrollToAnchor: function(e) {
             e.preventDefault();
             var scrollTo = Math.ceil($(e.currentTarget.hash).offset().top);
-            if ($(window).width() < 980 && e.currentTarget.hash !== "#intro" && e.currentTarget.hash !== "#ingredients") {
+
+            if (this.isDesktop() === false && e.currentTarget.hash !== "#intro" && e.currentTarget.hash !== "#ingredients") {
                 scrollTo -= $(".recipe__ingredients__label").height();
             }
+
             $("html, body").animate({
                 scrollTop: scrollTo
             }, 'slow');
+        },
+
+        isDesktop: function() {
+            var isDesktop = window.getComputedStyle(document.querySelector('.recipe'), ':before').content.replace(/"/g, "") ;
+            if (isDesktop === "desktop") {
+                return true;
+            } else {
+                return false;
+            }
         }
     };
 

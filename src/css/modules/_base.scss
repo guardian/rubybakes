@@ -1,5 +1,15 @@
 .recipe {
     color: $c-black;
+
+    &:before {
+        position: absolute;
+        z-index: -200;
+        content: "";
+
+        @include mq(desktop) {
+            content: "desktop";
+        }
+    }
 }
 
 .full {
