@@ -4,9 +4,9 @@
 
 .full {
     position: relative;
-    min-height: calc(100vh - 94px - 44px);
+    min-height: calc(100vh - 48px - 48px);
 
     @include mq(desktop) {
-        min-height: calc(100vh - 94px);
+        min-height: calc(100vh - 48px);
     }
 }
