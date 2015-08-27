@@ -67,6 +67,7 @@
     border-top: 1px solid $c-purple;
     background-color: $c-pink;
     user-select: none;
+    transition: background-color 0.3s ease-out;
 
     @include mq(desktop) {
         height: 32px;
@@ -91,6 +92,10 @@
             right: auto;
         }
     }
+
+    .is-expandable &:hover {
+        background-color: darken($c-pink, 2%);
+    }
 }
 
 .recipe__ingredients__hit-area {
@@ -103,11 +108,21 @@
 }
 
 .recipe__ingredients__arrow {
-    float: right;
-    padding-top: 2px;
+    position: absolute;
+    top: 4px;
+    right: 0.625rem;
+    height: 24px;
+    width: 24px;
+    padding: 6px 5px 4px;
+    border-radius: 50%;
+    fill: $c-white;
+    background-color: $c-purple;
     opacity: 0;
-    fill: $c-purple;
     transition: opacity 0.3s ease-out;
+
+    @include mq(mobileLandscape) {
+        right: 1.25rem;
+    }
 
     @include mq(desktop) { 
         display: none;
