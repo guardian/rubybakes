@@ -95,7 +95,9 @@
     }
 
     .is-expandable &:hover {
-        background-color: darken($c-pink, 2%);
+        @include mq($until: desktop) {
+            background-color: darken($c-pink, 2%);
+        }
     }
 }
 

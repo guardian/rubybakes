@@ -55,7 +55,7 @@ define([
             var scrollTo = Math.ceil($(e.currentTarget.hash).offset().top);
 
             if (this.isDesktop() === false && e.currentTarget.hash !== "#intro" && e.currentTarget.hash !== "#ingredients") {
-                scrollTo -= $(".recipe__ingredients__label").height();
+                scrollTo -= $(".recipe__ingredients__label").outerHeight();
             }
 
             $("html, body").animate({
