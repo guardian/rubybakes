@@ -99,6 +99,12 @@
             background-color: darken($c-pink, 2%);
         }
     }
+
+    .is-expanded &:hover {
+        @include mq($until: desktop) {
+            background-color: $c-pink;
+        }
+    }
 }
 
 .recipe__ingredients__hit-area {
@@ -107,6 +113,7 @@
     left: -1.25rem;
     right: -1.25rem;
     bottom: -50%;
+    z-index: 40;
 }
 
 .recipe__ingredients__arrow {
